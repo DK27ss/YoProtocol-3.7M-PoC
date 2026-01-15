@@ -2,19 +2,19 @@
 
 ## Summary
 
-| **Protocol** | YO Protocol |
+| **Protocol** - YO Protocol
 
-| **Chain** | Ethereum Mainnet |
+| **Chain** - Ethereum Mainnet
 
-| **Block** | 24218806 |
+| **Block** - 24218806
 
-| **Attack Type** | Access Control Exploitation + Unauthorized Swap |
+| **Attack Type** - Access Control Exploitation + Unauthorized Swap
 
-| **Total Drained** | 3,840,651,397,502,403,762,632,376 tokens (~3.84e24) |
+| **Total Drained** - 3,840,651,397,502,403,762,632,376 tokens (~3.84e24)
 
-| **Attacker Profit** | 16,825,758,092,977,224,691,385 tokens (~16.8e21) |
+| **Attacker Profit** - 16,825,758,092,977,224,691,385 tokens (~16.8e21)
 
-| **Root Cause** | Misconfigured Access Control Permissions |
+| **Root Cause** - Misconfigured Access Control Permissions
 
 ---
 
@@ -24,21 +24,21 @@ An attacker exploited misconfigured access control permissions on the YO Protoco
 
 ## Contracts
 
-| **Vault (Proxy)** | `0x0000000f2eB9f69274678c76222B35eEc7588a65` | Victim - holds protocol funds |
-| **Vault Implementation** | `0xAAE23050e5BaD7f0024a0F73b8C890368AFf912D` | Logic contract |
-| **Access Control** | `0x9524e25079b1b04D904865704783A5aA0202d44D` | Permission management |
-| **Drained Token** | `0x1a88Df1cFe15Af22B3c4c783D4e6F7F9e0C1885d` | Yield-bearing token (aToken-style) |
-| **Token Implementation** | `0x50F9d4E28309303F0cdcAc8AF0b569e8b75Ab857` | Token logic |
-| **Swap Router** | `0xCf5540fFFCdC3d510B18bFcA6d2b9987b0772559` | DEX aggregator |
-| **Path Executor** | `0x365084B05Fa7d5028346bD21D842eD0601bAB5b8` | Swap routing |
-| **Uniswap V4** | `0x000000000004444c5dc75cB358380D2e3dE08A90` | Pool Manager |
-| **Attacker** | `0x5C28b54E7e1f9aafbdc5c563C1a460106f41Bd58` | EOA with permissions |
+| **Vault (Proxy)** `0x0000000f2eB9f69274678c76222B35eEc7588a65`  (Victim - holds protocol funds)
+| **Vault Implementation** `0xAAE23050e5BaD7f0024a0F73b8C890368AFf912D`  (Logic contract)
+| **Access Control** `0x9524e25079b1b04D904865704783A5aA0202d44D`  (Permission management)
+| **Drained Token** `0x1a88Df1cFe15Af22B3c4c783D4e6F7F9e0C1885d`  (Yield-bearing token)
+| **Token Implementation** `0x50F9d4E28309303F0cdcAc8AF0b569e8b75Ab857`  (Token logic)
+| **Swap Router** `0xCf5540fFFCdC3d510B18bFcA6d2b9987b0772559`  (DEX aggregator)
+| **Path Executor** `0x365084B05Fa7d5028346bD21D842eD0601bAB5b8`  (Swap routing)
+| **Uniswap V4** `0x000000000004444c5dc75cB358380D2e3dE08A90`  (Pool Manager)
+| **Attacker** `0x5C28b54E7e1f9aafbdc5c563C1a460106f41Bd58`  (EOA with permissions)
 
 ---
 
-## 3. Vulnerability Analysis
+## Analysis
 
-### 3.1 The `manage()` Function
+### `manage()` Function
 
 The vault exposes a `manage()` function that allows authorized callers to execute arbitrary calls on behalf of the vault:
 
@@ -64,9 +64,9 @@ The attacker address `0x5C28b54E7e1f9aafbdc5c563C1a460106f41Bd58` had the follow
 
 | Permission | Target | Selector | Status |
 |------------|--------|----------|--------|
-| `manage()` | Vault | `0x224d8703` | ✅ Allowed |
-| `approve()` | Token | `0x095ea7b3` | ✅ Allowed |
-| `swapCompact()` | Router | `0x83bd37f9` | ✅ Allowed |
+| `manage()` | Vault | `0x224d8703` --> Allowed
+| `approve()` | Token | `0x095ea7b3` --> Allowed
+| `swapCompact()` | Router | `0x83bd37f9` --> Allowed
 
 **Critical Issue**: The combination of these permissions allowed the attacker to:
 1. Approve unlimited tokens to an external swap router
@@ -181,8 +181,6 @@ During execution, multiple transfers to the attacker occurred:
 
 ### Impact
 
-| Metric | Before Attack | After Attack | Change |
-|--------|---------------|--------------|--------|
 | Vault Token Balance | 3,840,651,397,502,403,762,632,376 | 0 | -100% |
 | Vault USDC Balance | 214,521,376,118 | 326,526,125,049 | +$112,004 |
 | Attacker Token Balance | 0 | 16,825,758,092,977,224,691,385 | +16.8e21 |
