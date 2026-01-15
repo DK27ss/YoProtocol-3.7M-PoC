@@ -85,6 +85,8 @@ Vault Tokens → Path Executor → Uniswap V4 Pools → USDC
               Fee to tx.origin (Attacker)
 ```
 
+TX : https://app.blocksec.com/phalcon/explorer/tx/eth/0x6aff59e800dc219ff0d1614b3dc512e7a07159197b2a6a26969a9ca25c3e33b4
+
 ---
 
 ## Execution Flow
