@@ -158,27 +158,12 @@ bytes swapCalldata = hex"83bd37f9..."; // routing data
 
 The `swapCompact()` calldata contains encoded routing instructions:
 
-**Input Token** `0x1a88Df1cFe15Af22B3c4c783D4e6F7F9e0C1885d` 
-**Output Token** `0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48` (USDC) 
-**Input Amount** 3,840,651,397,502,403,762,632,376 
-**Min Output** Variable per route 
-**Recipient** `0x0000000f2eB9f69274678c76222B35eEc7588a65` (Vault) 
-**Path Executor** `0x365084B05Fa7d5028346bD21D842eD0601bAB5b8` 
-
-### Events
-
-During execution, multiple transfers to the attacker occurred:
 ```
-1 | 2,707,043,360,499,207,026,811
-2 | 2,728,689,309,539,293,839,597
-3 | 1,485,850,090,802,433,539,437
-4 | 282,197,017,633,341,642,195
-5 | 3,002,829,052,124,889,163,396
-6 | 246,020,006,946,509,522,467
-7 | 2,999,728,951,056,450,474,984
-8 | 659,147,428,002,022,147,688
-9 | 2,714,252,876,373,077,334,810
-Total : 16,825,758,092,977,224,691,385
+Input Token 0x1a88Df1cFe15Af22B3c4c783D4e6F7F9e0C1885d 
+Output Token 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 (USDC) 
+Input Amount 3,840,651,397,502,403,762,632,376
+Recipient 0x0000000f2eB9f69274678c76222B35eEc7588a65 (Vault) 
+Path Executor 0x365084B05Fa7d5028346bD21D842eD0601bAB5b8
 ```
 
 <img width="1572" height="189" alt="image" src="https://github.com/user-attachments/assets/896e47f5-f754-4261-b272-a951589f527a" />
