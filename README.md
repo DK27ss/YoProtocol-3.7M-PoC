@@ -61,6 +61,8 @@ function canCall(
 ) external view returns (bool);
 ```
 
+<img width="1710" height="500" alt="image" src="https://github.com/user-attachments/assets/8af3d3ec-c9e6-46f7-9425-bb55cf47708e" />
+
 The attacker address `0x5C28b54E7e1f9aafbdc5c563C1a460106f41Bd58` had the following permissions configured:
 
 | Permission | Target | Selector | Status |
