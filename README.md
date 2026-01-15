@@ -180,6 +180,9 @@ During execution, multiple transfers to the attacker occurred:
 9 | 2,714,252,876,373,077,334,810
 Total : 16,825,758,092,977,224,691,385
 ```
+
+<img width="1572" height="189" alt="image" src="https://github.com/user-attachments/assets/896e47f5-f754-4261-b272-a951589f527a" />
+
 ---
 
 ### Results
