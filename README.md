@@ -18,7 +18,7 @@
 
 ---
 
-An attacker exploited misconfigured access control permissions on the YO Protocol vault to drain approximately 3.84e24 yield-bearing tokens. The attacker leveraged their `canCall()` permissions to execute a `manage()` function call that approved and swapped the vault's entire token balance through a DEX aggregator, extracting ~0.44% of the swapped amount as fees.
+An attacker exploited misconfigured access control permissions on the YO Protocol vault to drain approximately 3.84e24 yield-bearing tokens. The attacker leveraged their `canCall()` permissions to execute a `manage()` function call that approved and swapped the vault entire token balance through a DEX aggregator, extracting ~0.44% of the swapped amount as fees.
 
 ---
 
