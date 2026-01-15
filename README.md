@@ -24,6 +24,7 @@ An attacker exploited misconfigured access control permissions on the YO Protoco
 
 ## Contracts
 
+```
 | **Vault (Proxy)** `0x0000000f2eB9f69274678c76222B35eEc7588a65`  (Victim - holds protocol funds)
 | **Vault Implementation** `0xAAE23050e5BaD7f0024a0F73b8C890368AFf912D`  (Logic contract)
 | **Access Control** `0x9524e25079b1b04D904865704783A5aA0202d44D`  (Permission management)
@@ -33,7 +34,7 @@ An attacker exploited misconfigured access control permissions on the YO Protoco
 | **Path Executor** `0x365084B05Fa7d5028346bD21D842eD0601bAB5b8`  (Swap routing)
 | **Uniswap V4** `0x000000000004444c5dc75cB358380D2e3dE08A90`  (Pool Manager)
 | **Attacker** `0x5C28b54E7e1f9aafbdc5c563C1a460106f41Bd58`  (EOA with permissions)
-
+```
 ---
 
 ## Analysis
