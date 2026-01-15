@@ -3,11 +3,17 @@
 ## Summary
 
 | **Protocol** | YO Protocol |
+
 | **Chain** | Ethereum Mainnet |
+
 | **Block** | 24218806 |
+
 | **Attack Type** | Access Control Exploitation + Unauthorized Swap |
+
 | **Total Drained** | 3,840,651,397,502,403,762,632,376 tokens (~3.84e24) |
+
 | **Attacker Profit** | 16,825,758,092,977,224,691,385 tokens (~16.8e21) |
+
 | **Root Cause** | Misconfigured Access Control Permissions |
 
 ---
