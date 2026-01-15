@@ -166,7 +166,7 @@ The `swapCompact()` calldata contains encoded routing instructions:
 ### Events
 
 During execution, multiple transfers to the attacker occurred:
-
+```
 1 | 2,707,043,360,499,207,026,811
 2 | 2,728,689,309,539,293,839,597
 3 | 1,485,850,090,802,433,539,437
@@ -177,14 +177,16 @@ During execution, multiple transfers to the attacker occurred:
 8 | 659,147,428,002,022,147,688
 9 | 2,714,252,876,373,077,334,810
 **Total** | **16,825,758,092,977,224,691,385**
-
+```
 ---
 
 ### Impact
 
+```
 | Vault Token Balance | 3,840,651,397,502,403,762,632,376 | 0 | -100% |
 | Vault USDC Balance | 214,521,376,118 | 326,526,125,049 | +$112,004 |
 | Attacker Token Balance | 0 | 16,825,758,092,977,224,691,385 | +16.8e21 |
+```
 
 ### Results
 
