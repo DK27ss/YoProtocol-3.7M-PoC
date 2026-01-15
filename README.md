@@ -97,22 +97,22 @@ Step 1: Permission Verification
                                       ↓                                       
 Step 2: Execute manage() with malicious calldata                          
 ┌──────────────────────────────────────────────────────────────────────┐   
-│ vault.manage(                                                         │   
-│   targets: [token, swapRouter],                                       │   
-│   calldatas: [approve(...), swapCompact(...)],                        │   
-│   values: [0, 0]                                                      │   
-│ )                                                                     │   
+│ vault.manage(                                                        │   
+│   targets: [token, swapRouter],                                      │   
+│   calldatas: [approve(...), swapCompact(...)],                       │   
+│   values: [0, 0]                                                     │   
+│ )                                                                    │   
 └──────────────────────────────────────────────────────────────────────┘   
                                       ↓                                       
 Step 3: Token Approval                                                      
 ┌──────────────────────────────────────────────────────────────────────┐   
 │ token.approve(swapRouter, 3,840,651,397,502,403,762,632,376)         │   
-│                           (3.84e24 tokens - entire balance)           │   
+│                           (3.84e24 tokens - entire balance)          │   
 └──────────────────────────────────────────────────────────────────────┘   
                                       ↓                                       
 Step 4: Swap Execution                                                      
 ┌──────────────────────────────────────────────────────────────────────┐   
-│ swapRouter.swapCompact() executes:                                    │   
+│ swapRouter.swapCompact() executes:                                   │   
 │   • transferFrom(vault → pathExecutor, 3.84e24 tokens)               │   
 │   • Multi-hop swaps through Uniswap V4 pools                         │   
 │   • Fee distribution to tx.origin (attacker)                         │   
@@ -121,9 +121,9 @@ Step 4: Swap Execution
                                       ↓                                       
 Step 5: Profit Extraction                                                   
 ┌──────────────────────────────────────────────────────────────────────┐   
-│ During swap execution, attacker receives:                             │   
+│ During swap execution, attacker receives:                            │   
 │   • 16,825,758,092,977,224,691,385 tokens (~16.8e21)                 │   
-│   • Approximately 0.44% of total swapped amount                       │   
+│   • Approximately 0.44% of total swapped amount                      │   
 └──────────────────────────────────────────────────────────────────────┘   
 ```
 
