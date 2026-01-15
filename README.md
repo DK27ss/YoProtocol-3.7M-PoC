@@ -65,9 +65,9 @@ The attacker address `0x5C28b54E7e1f9aafbdc5c563C1a460106f41Bd58` had the follow
 
 | Permission | Target | Selector | Status |
 |------------|--------|----------|--------|
-| `manage()` | Vault | `0x224d8703` --> Allowed
-| `approve()` | Token | `0x095ea7b3` --> Allowed
-| `swapCompact()` | Router | `0x83bd37f9` --> Allowed
+| `manage()` | Vault | `0x224d8703` | Allowed
+| `approve()` | Token | `0x095ea7b3` | Allowed
+| `swapCompact()` | Router | `0x83bd37f9` | Allowed
 
 **Critical Issue**: The combination of these permissions allowed the attacker to:
 1. Approve unlimited tokens to an external swap router
