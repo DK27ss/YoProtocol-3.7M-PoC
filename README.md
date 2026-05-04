@@ -180,3 +180,11 @@ Gas Price:   ~0.11 gwei
 Attack Cost: ~0.00064 ETH (~$2.30)
 ```
 
+>
+>Company : https://blockraider.xyz/
+>
+>Community : https://discord.gg/Vqqt7jyRr7
+>
+>Disclosure : https://t.me/blockraider_alerts_bot
+
+<img width="161" height="51" alt="blockraider" src="https://github.com/user-attachments/assets/dc86222a-b5fb-49e8-9a9d-350973b7521d" />
